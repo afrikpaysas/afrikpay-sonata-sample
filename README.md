@@ -1,3 +1,6 @@
+Installation des dépendacnes
+Composer update 
+
 Create the database 
 php bin/console doctrine:database:create
 ou modifier les paramètres dans le fichier .env.local
