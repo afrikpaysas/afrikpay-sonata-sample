@@ -1,0 +1,12 @@
+{% extends '@SonataAdmin/CRUD/edit.html.twig' %}
+{% block sonata_form_action_url %}
+    {% set url = objectId is not null ? 'customize' : 'create' %}
+    {{
+    admin.generateUrl(url, {(admin.idParameter): objectId, 'uniqid': admin.uniqid, 'subclass': app.request.get('subclass')}) }}
+{% endblock %}
+{% block btn_update_and_edit %}
+    <button type="submit" class="btn btn-success" name="btn_customize_and_edit"><i class="fas fa-save" aria-hidden="true"></i> Customize</button>
+{% endblock %}
+{% block btn_update_and_list %}
+    <button type="submit" class="btn btn-success" name="btn_customize_and_list"><i class="fas fa-save"></i> <i class="fas fa-list" aria-hidden="true"></i> Customize and close </button>
+{% endblock %}
